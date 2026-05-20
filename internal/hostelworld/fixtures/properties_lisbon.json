@@ -1,0 +1,62 @@
+[
+  {
+    "id": "12345",
+    "name": "Yes! Lisbon Hostel",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Baixa",
+    "rating": 9.2,
+    "rating_label": "Superb",
+    "price_from": { "amount": 24.50, "currency": "USD" },
+    "thumbnail": "https://example.com/p/12345.jpg",
+    "tags": ["wifi", "breakfast", "24h_reception"]
+  },
+  {
+    "id": "12346",
+    "name": "Lisbon Destination Hostel",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Rossio",
+    "rating": 8.9,
+    "rating_label": "Fabulous",
+    "price_from": { "amount": 22.00, "currency": "USD" },
+    "thumbnail": "https://example.com/p/12346.jpg",
+    "tags": ["wifi", "free_breakfast", "bar"]
+  },
+  {
+    "id": "12347",
+    "name": "Sunset Destination Hostel",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Cais do Sodré",
+    "rating": 9.5,
+    "rating_label": "Superb",
+    "price_from": { "amount": 28.75, "currency": "USD" },
+    "thumbnail": "https://example.com/p/12347.jpg",
+    "tags": ["wifi", "rooftop", "pub_crawl"]
+  },
+  {
+    "id": "12348",
+    "name": "Home Lisbon Hostel",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Baixa",
+    "rating": 9.7,
+    "rating_label": "Superb",
+    "price_from": { "amount": 32.00, "currency": "USD" },
+    "thumbnail": "https://example.com/p/12348.jpg",
+    "tags": ["wifi", "breakfast", "family_run"]
+  },
+  {
+    "id": "12349",
+    "name": "Lookout! Lisbon Hostel",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Chiado",
+    "rating": 8.4,
+    "rating_label": "Very Good",
+    "price_from": { "amount": 19.50, "currency": "USD" },
+    "thumbnail": "https://example.com/p/12349.jpg",
+    "tags": ["wifi", "kitchen"]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "property": {
+    "id": "326223",
+    "name": "Revolution Khao San by The Bliss",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "neighborhood": "Khao San",
+    "rating": 8.7,
+    "rating_label": "Fabulous",
+    "price_from": { "amount": 9.00, "currency": "USD" },
+    "address": "Khao San Road, Bangkok 10200, Thailand",
+    "description": "Steps from Khao San Road's nightlife with a rooftop bar and tour desk.",
+    "facilities": ["Free WiFi", "Rooftop bar", "Tour desk", "Lockers", "Laundry"],
+    "checkin_time": "14:00",
+    "checkout_time": "11:00",
+    "thumbnail": "https://example.com/p/326223.jpg"
+  },
+  "rooms": [
+    {
+      "id": "326223-dorm-8",
+      "name": "8-Bed Mixed Dorm",
+      "type": "dorm",
+      "capacity": 8,
+      "price": { "amount": 9.00, "currency": "USD" },
+      "available": true,
+      "description": "Mixed dorm, A/C, shared bathroom."
+    },
+    {
+      "id": "326223-private-2",
+      "name": "Private Double Room",
+      "type": "private",
+      "capacity": 2,
+      "price": { "amount": 36.00, "currency": "USD" },
+      "available": true,
+      "description": "Private room with en-suite bathroom."
+    }
+  ]
+}

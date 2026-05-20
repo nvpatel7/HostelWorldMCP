@@ -1,0 +1,38 @@
+[
+  {
+    "id": "326223",
+    "name": "Revolution Khao San by The Bliss",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "neighborhood": "Khao San",
+    "rating": 8.7,
+    "rating_label": "Fabulous",
+    "price_from": { "amount": 9.00, "currency": "USD" },
+    "thumbnail": "https://example.com/p/326223.jpg",
+    "tags": ["wifi", "rooftop_bar", "tour_desk"]
+  },
+  {
+    "id": "326224",
+    "name": "Mad Monkey Hostel Bangkok",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "neighborhood": "Sukhumvit",
+    "rating": 8.8,
+    "rating_label": "Fabulous",
+    "price_from": { "amount": 11.50, "currency": "USD" },
+    "thumbnail": "https://example.com/p/326224.jpg",
+    "tags": ["wifi", "pool", "bar", "events"]
+  },
+  {
+    "id": "326225",
+    "name": "Lub d Bangkok Silom",
+    "city": "Bangkok",
+    "country": "Thailand",
+    "neighborhood": "Silom",
+    "rating": 9.1,
+    "rating_label": "Superb",
+    "price_from": { "amount": 14.00, "currency": "USD" },
+    "thumbnail": "https://example.com/p/326225.jpg",
+    "tags": ["wifi", "bar", "lockers"]
+  }
+]

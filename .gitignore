@@ -1,0 +1,17 @@
+# Binaries
+/bin/
+hostelworld-mcp
+*.test
+*.out
+
+# Secrets
+.env
+.env.local
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Persisted budget counter (runtime artifact)
+budget.json

@@ -1,0 +1,47 @@
+{
+  "property": {
+    "id": "12345",
+    "name": "Yes! Lisbon Hostel",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Baixa",
+    "rating": 9.2,
+    "rating_label": "Superb",
+    "price_from": { "amount": 24.50, "currency": "USD" },
+    "address": "Rua de São Julião 148, 1100-525 Lisboa, Portugal",
+    "description": "A central hostel two minutes from the Tagus river with a popular rooftop terrace.",
+    "facilities": ["Free WiFi", "Breakfast included", "24h reception", "Lockers", "Common kitchen"],
+    "checkin_time": "14:00",
+    "checkout_time": "11:00",
+    "thumbnail": "https://example.com/p/12345.jpg"
+  },
+  "rooms": [
+    {
+      "id": "12345-dorm-6",
+      "name": "6-Bed Mixed Dorm",
+      "type": "dorm",
+      "capacity": 6,
+      "price": { "amount": 24.50, "currency": "USD" },
+      "available": true,
+      "description": "Mixed dorm with shared bathroom."
+    },
+    {
+      "id": "12345-dorm-4f",
+      "name": "4-Bed Female Dorm",
+      "type": "dorm",
+      "capacity": 4,
+      "price": { "amount": 28.00, "currency": "USD" },
+      "available": true,
+      "description": "Female-only dorm with shared bathroom."
+    },
+    {
+      "id": "12345-private-2",
+      "name": "Private Twin Room",
+      "type": "private",
+      "capacity": 2,
+      "price": { "amount": 78.00, "currency": "USD" },
+      "available": true,
+      "description": "Two single beds, shared bathroom."
+    }
+  ]
+}
