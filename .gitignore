@@ -15,3 +15,7 @@ hostelworld-mcp
 
 # Persisted budget counter (runtime artifact)
 budget.json
+
+
+#docs
+docs/
