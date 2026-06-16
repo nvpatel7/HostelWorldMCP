@@ -1,0 +1,869 @@
+{
+ "id": "93919",
+ "isPromoted": true,
+ "name": "ClinkNOORD",
+ "transName": "ClinkNOORD",
+ "currency": "EUR",
+ "isActive": [
+  "Affiliate",
+  "Hostelworld",
+  "BBW"
+ ],
+ "isHRP": true,
+ "hasRatingRemoval": false,
+ "hrpPropertyDescriptions": {
+  "staffMember": "",
+  "staffTitle": "",
+  "staffTitleTranslated": false,
+  "weSay": "",
+  "weSayTranslated": false,
+  "theySay": "",
+  "theySayTranslated": false
+ },
+ "isElevateProperty": false,
+ "hasOwnTranslation": true,
+ "isInactiveWhitelisted": false,
+ "type": "HOSTEL",
+ "checkIn": {
+  "startsAt": "15",
+  "endsAt": "23"
+ },
+ "maxNumberOfGuestsPerBooking": 8,
+ "isFeatured": true,
+ "latestCheckOut": "10:00",
+ "rating": {
+  "valueForMoney": 80,
+  "security": 89,
+  "location": 90,
+  "staff": 88,
+  "atmosphere": 82,
+  "cleanliness": 79,
+  "facilities": 80,
+  "overall": 84
+ },
+ "bestFor": [
+  "Central Location",
+  "Meeting People"
+ ],
+ "isNew": false,
+ "reviews": [
+  {
+   "id": "16518260",
+   "notes": "Very expensive for what you get, but still cheaper than other hostels in Amsterdam.\n\nThe 14 bed rooms are far too crammed and unhygienic.  They get fans in the room so they\u2019re running all night and people leave food lying around. The back of the rooms are also very dark and crammed in a corner.\n\nMy locker was smaller than all others and only fit a small bag. It was also coming off the hinges.\n\nNot many showers and most smell of urine, but they\u2019re spacious at least lol.\n\nLocation is a 10",
+   "date": "2026-06-05",
+   "rating": {
+    "overall": 60
+   },
+   "groupInformation": {
+    "groupTypeCode": "MALE",
+    "age": "25-30",
+    "tripTypeCodes": [
+     "WEEKENDAWAY"
+    ]
+   },
+   "user": {
+    "nickname": "kellyg7894349",
+    "image": null,
+    "gender": null,
+    "nationality": {
+     "name": "England",
+     "code": "ENG"
+    },
+    "numberOfReviews": "6"
+   }
+  }
+ ],
+ "totalRatings": "15484",
+ "recommendations": {
+  "recommended": null,
+  "responses": "15484"
+ },
+ "starRating": 0,
+ "facilities": [
+  {
+   "numericId": 2,
+   "name": "General",
+   "id": "FACILITYCATEGORYGENERAL",
+   "facilities": [
+    {
+     "numericId": 78,
+     "name": "Adaptors",
+     "id": "ADAPTORS"
+    },
+    {
+     "numericId": 28,
+     "name": "Bicycle Parking",
+     "id": "BICYCLEPARKING"
+    },
+    {
+     "numericId": 51,
+     "name": "Meeting Rooms",
+     "id": "MEETINGROOM"
+    }
+   ]
+  },
+  {
+   "numericId": 3,
+   "name": "Services",
+   "id": "FACILITYCATEGORYSERVICES",
+   "facilities": [
+    {
+     "numericId": 20,
+     "name": "24 Hour Reception",
+     "id": "24HOURRECEPTION"
+    },
+    {
+     "numericId": 77,
+     "name": "ATM",
+     "id": "ATM"
+    },
+    {
+     "numericId": 121,
+     "name": "Housekeeping",
+     "id": "HOUSEKEEPING"
+    },
+    {
+     "numericId": 15,
+     "name": "Luggage Storage",
+     "id": "LUGGAGESTORAGE"
+    },
+    {
+     "numericId": 21,
+     "name": "Tours/Travel Desk",
+     "id": "TOURSTRAVELDESK"
+    }
+   ]
+  },
+  {
+   "numericId": 5,
+   "name": "Entertainment",
+   "id": "FACILITYCATEGORYENTERTAINMENT",
+   "facilities": [
+    {
+     "numericId": 95,
+     "name": "Board Games",
+     "id": "BOARDGAMES"
+    },
+    {
+     "numericId": 79,
+     "name": "Book Exchange",
+     "id": "BOOKEXCHANGE"
+    },
+    {
+     "numericId": 106,
+     "name": "Cable TV",
+     "id": "CABLETV"
+    },
+    {
+     "numericId": 110,
+     "name": "Foosball",
+     "id": "FUSBALL"
+    },
+    {
+     "numericId": 4,
+     "name": "Internet Access",
+     "id": "INTERNETACCESS"
+    },
+    {
+     "numericId": 109,
+     "name": "Pool Table",
+     "id": "POOLTABLE"
+    },
+    {
+     "numericId": 386,
+     "name": "Smart TV",
+     "id": "SMARTTV"
+    },
+    {
+     "numericId": 383,
+     "name": "Table Tennis",
+     "id": "TABLETENNIS"
+    },
+    {
+     "numericId": 133,
+     "name": "Wi-Fi",
+     "id": "WIFI"
+    }
+   ]
+  },
+  {
+   "numericId": 4,
+   "name": "Food & Drinks",
+   "id": "FACILITYCATEGORYFOODANDDRINKS",
+   "facilities": [
+    {
+     "numericId": 12,
+     "name": "Bar",
+     "id": "BAR"
+    },
+    {
+     "numericId": 117,
+     "name": "Cafe",
+     "id": "CAFE"
+    },
+    {
+     "numericId": 2,
+     "name": "Restaurant",
+     "id": "RESTAURANT"
+    },
+    {
+     "numericId": 86,
+     "name": "Vending Machines",
+     "id": "VENDINGMACHINES"
+    }
+   ]
+  },
+  {
+   "numericId": 8,
+   "name": "Laundry",
+   "id": "FACILITYCATEGORYLAUNDRY",
+   "facilities": [
+    {
+     "numericId": 102,
+     "name": "Dryer",
+     "id": "DRYER"
+    },
+    {
+     "numericId": 368,
+     "name": "Free Iron / Ironing Board",
+     "id": "FREEIRONIRONINGBOARD"
+    },
+    {
+     "numericId": 5,
+     "name": "Laundry Facilities",
+     "id": "LAUNDRYFACILITIES"
+    },
+    {
+     "numericId": 369,
+     "name": "Recycling Bins",
+     "id": "RECYCLINGBINS"
+    },
+    {
+     "numericId": 131,
+     "name": "Washing Machine",
+     "id": "WASHINGMACHINE"
+    }
+   ]
+  },
+  {
+   "numericId": 15,
+   "name": "Available for a Fee",
+   "id": "FACILITYCATEGORYAVAILABLEFORAFEE",
+   "facilities": [
+    {
+     "numericId": 7,
+     "name": "Bicycle Hire",
+     "id": "BICYCLEHIRE"
+    },
+    {
+     "numericId": 37,
+     "name": "Breakfast Not Included",
+     "id": "BREAKFASTNOTINCLUDED"
+    },
+    {
+     "numericId": 150,
+     "name": "Express check-in / out",
+     "id": "EXPRESSCHECKINOUT"
+    },
+    {
+     "numericId": 115,
+     "name": "Hair Dryers For Hire",
+     "id": "HAIRDRYERSFORHIRE"
+    },
+    {
+     "numericId": 152,
+     "name": "Late check-out",
+     "id": "LATECHECKOUT"
+    },
+    {
+     "numericId": 353,
+     "name": "Paid Luggage Storage",
+     "id": "PAIDLUGGAGESTORAGE"
+    },
+    {
+     "numericId": 355,
+     "name": "Paid Security lockers",
+     "id": "PAIDSECURITYLOCKERS"
+    },
+    {
+     "numericId": 13,
+     "name": "Towels for hire",
+     "id": "TOWELSFORHIRE"
+    }
+   ]
+  },
+  {
+   "numericId": 7,
+   "name": "Accessibility",
+   "id": "FACILITYCATEGORYACCESSIBILITY",
+   "facilities": [
+    {
+     "numericId": 27,
+     "name": "Elevator",
+     "id": "ELEVATOR"
+    },
+    {
+     "numericId": 364,
+     "name": "Ramps",
+     "id": "RAMPS"
+    },
+    {
+     "numericId": 8,
+     "name": "Wheelchair Friendly",
+     "id": "WHEELCHAIRACCESSIBLE"
+    },
+    {
+     "numericId": 366,
+     "name": "Wheelchair-Accessible Bathrooms",
+     "id": "WHEELCHAIRACCESSIBLEBATHROOMS"
+    }
+   ]
+  },
+  {
+   "numericId": 13,
+   "name": "Bedroom",
+   "id": "FACILITYCATEGORYBEDROOM",
+   "facilities": [
+    {
+     "numericId": 382,
+     "name": "Charging Plugs",
+     "id": "CHARGINGPLUGS"
+    },
+    {
+     "numericId": 91,
+     "name": "Cots Available",
+     "id": "COTSAVAILABLE"
+    },
+    {
+     "numericId": 119,
+     "name": "Hair Dryers",
+     "id": "HAIRDRYERS"
+    },
+    {
+     "numericId": 9,
+     "name": "Linen Included",
+     "id": "LINENINCLUDED"
+    },
+    {
+     "numericId": 111,
+     "name": "Reading Light",
+     "id": "READINGLIGHT"
+    },
+    {
+     "numericId": 132,
+     "name": "Towels Not Included",
+     "id": "TOWELSNOTINCLUDED"
+    }
+   ]
+  },
+  {
+   "numericId": 11,
+   "name": "Safety & Security",
+   "id": "FACILITYCATEGORYSAFETYANDSECURITY",
+   "facilities": [
+    {
+     "numericId": 112,
+     "name": "24 Hour Security",
+     "id": "24HOURSECURITY"
+    },
+    {
+     "numericId": 374,
+     "name": "Carbon Monoxide Detector",
+     "id": "CARBONMONOXIDEDETECTOR"
+    },
+    {
+     "numericId": 375,
+     "name": "CCTV in Common Areas",
+     "id": "CCTVINCOMMONAREAS"
+    },
+    {
+     "numericId": 376,
+     "name": "Fire Extinguishers",
+     "id": "FIREEXTINGUISHERS"
+    },
+    {
+     "numericId": 377,
+     "name": "First Aid Kits",
+     "id": "FIRSTAIDKITS"
+    },
+    {
+     "numericId": 22,
+     "name": "Key Card Access",
+     "id": "KEYCARDACCESS"
+    },
+    {
+     "numericId": 14,
+     "name": "Security Lockers",
+     "id": "LOCKERS"
+    },
+    {
+     "numericId": 378,
+     "name": "Smoke Alarms",
+     "id": "SMOKEALARMS"
+    },
+    {
+     "numericId": 379,
+     "name": "Smoke Detector",
+     "id": "SMOKEDETECTOR"
+    }
+   ]
+  },
+  {
+   "numericId": 12,
+   "name": "Social Areas",
+   "id": "FACILITYCATEGORYSOCIALAREAS",
+   "facilities": [
+    {
+     "numericId": 24,
+     "name": "Common Room",
+     "id": "COMMONROOM"
+    },
+    {
+     "numericId": 108,
+     "name": "Games Room",
+     "id": "GAMESROOM"
+    },
+    {
+     "numericId": 380,
+     "name": "Lounge Room",
+     "id": "LOUNGEROOM"
+    }
+   ]
+  },
+  {
+   "numericId": 1,
+   "name": "Free",
+   "id": "FACILITYCATEGORYFREE",
+   "facilities": [
+    {
+     "numericId": 80,
+     "name": "Free City Maps",
+     "id": "FREECITYMAPS"
+    },
+    {
+     "numericId": 90,
+     "name": "Free WiFi",
+     "id": "FREEWIFI"
+    }
+   ]
+  },
+  {
+   "numericId": 9,
+   "name": "Wellness",
+   "id": "FACILITYCATEGORYWELLNESS",
+   "facilities": [
+    {
+     "numericId": 81,
+     "name": "Hot Showers",
+     "id": "HOTSHOWERS"
+    }
+   ]
+  },
+  {
+   "numericId": 14,
+   "name": "Hostelworld Policies",
+   "id": "FACILITYCATEGORYHOSTELWORLDPOLICIES",
+   "facilities": [
+    {
+     "numericId": 300,
+     "name": "Flexible NRR",
+     "id": "FLEXIBLENRR"
+    }
+   ]
+  },
+  {
+   "numericId": 6,
+   "name": "Kitchen",
+   "id": "FACILITYCATEGORYKITCHEN",
+   "facilities": [
+    {
+     "numericId": 359,
+     "name": "Kettle",
+     "id": "KETTLE"
+    }
+   ]
+  }
+ ],
+ "hostelworldRecommends": true,
+ "hostelworldSays": "",
+ "description": "Welcome to ClinkNOORD!\r\nJust a short, free ferry ride from Amsterdam Central Station, ClinkNOORD is set in the lively and cultural Amsterdam Noord area. Our hostel combines Dutch charm with modern creativity, offering unique social spaces like a leafy atrium, cozy caf\u00e9, library, and ZincBAR, which hosts live music and performances. We also offer daily events, from morning yoga classes to cocktail-making workshops. Our friendly, multilingual staff are always ready with local tips to help you make the most of your Amsterdam adventure.\r\nChoose from a variety of accommodations, including mixed and girls-only dorms (4-14 beds) with or without en-suites, and private rooms ranging from single to double, some with stunning views. Each bed features a reading light, USB port, and secure locker. Start your day with our all-you-can-eat buffet breakfast (\u20ac9.90), available 7-10.30AM (Mon-Fri) and 8-11.30AM (Sat-Sun). Stay connected with free Wi-Fi throughout the hostel and take advantage of our coin-operated laundry facilities (\u20ac4.50 per cycle).\r\nFor your safety, we offer 24/7 key card access, bed lockboxes, and additional lockers at reception. While we don\u2019t have on-site parking, nearby options include Asterweg and Distelweg for \u20ac1.40 per hour (free from 7pm to 9am) and the secure ADAM Toren / EYE Filmmuseum garage (\u20ac1.15 per 20 minutes / \u20ac44 per 24 hours). Please review our Terms & Conditions before booking and contact us directly for group bookings of 10 or more guests. For cancellations or changes, email us at least 24 hours before arrival to avoid charges. Looking forward to welcoming you to ClinkNOORD!",
+ "googleTranslatedShortIntro": false,
+ "googleTranslatedDirections": false,
+ "googleTranslatedDescription": false,
+ "googleTranslatedHostelworldSays": false,
+ "latitude": "52.3842275",
+ "longitude": "4.9037391",
+ "address1": "Badhuiskade 3",
+ "address2": "1031 KV Amsterdam",
+ "directions": "ClinkNOORD is located in Badhuiskade in Amsterdam Noord. With Centraal Station only a 5-10 minutes journey away, the hostel is well connected to the heart of Amsterdam.\r\n\r\nFrom Amsterdam Centraal Station\r\n\r\nWhen you arrive at Centraal Station, follow the signs to the ferries. From here, jump on the free ferry (24/7) to Veer Buiksloterweg which only takes 5 minutes and runs every 7 minutes (departs every 15 minutes during the night). From the boat, ClinkNOORD is only 400m away.\r\n\r\nWhen you get off the ferry, turn left straight away. Walk straight ahead across the bridge towards the EYE Film Museum and the ADAM Tower. Once you've crossed the bridge, turn right immediately and walk straight along the canal, with The Butcher restaurant on your left. Keep following the canal for about 50 meters and ClinkNOORD will be on your left. It's a big brown building with a CLINK sign outside, you can't miss it!",
+ "city": {
+  "id": "15",
+  "name": "Amsterdam",
+  "country": "Netherlands",
+  "idCountry": "148"
+ },
+ "region": {
+  "id": "403",
+  "name": "Diemen"
+ },
+ "paymentMethods": [
+  "Electron",
+  "JCB",
+  "Laser",
+  "Maestro",
+  "Mastercard",
+  "Visa",
+  "VisaDebit"
+ ],
+ "payments": {
+  "payNow": false
+ },
+ "depositPercentage": 15,
+ "cancellationPolicy": {
+  "depositOnly": {
+   "description": "This property has a 1 day cancellation policy. Failure to cancel within this time will result in a cancellation charge equal to the first night of your stay, unless otherwise stated (see 'Things to Note' information).",
+   "numberOfDays": "1"
+  },
+  "nonRefundable": {
+   "description": "Your booking is non-refundable. If you choose to cancel your booking, or in the case of a no-show, you will still be charged the full cost of your booking."
+  },
+  "freeCancellation": {
+   "description": "Your booking can be cancelled for free, if you cancel your booking 24 hours before arrival your deposit will be refunded to your payment card.  If you cancel within 24 hours, your deposit will not be refunded and the the total of the first night's accommodation will be charged to your payment card."
+  }
+ },
+ "freeCancellation": {
+  "isAvailable": true,
+  "daysInAdvance": 2
+ },
+ "thingsToNote": [
+  "CHECK-IN/OUT: \r\nCheck in from 3pm\r\nCheck out up to 10am.\r\nPlease make sure to bring valid photo identification with you, a passport, government-issued I.D. card or driving license - no photocopies will be accepted.\r\n\r\nAGE RESTRICTIONS: \r\nBookings cannot be accepted from any person under the age of 18 unless they are accompanied by an adult (18 or over). Guests who wish to bring their children under 16 years of age must book a whole dorm or private room. For guests aged 16 or 17 years of age, they can book into one of dorm rooms but must be accompanied by an adult (aged 18 or over).\r\n\r\nBREAKFAST: \r\nBreakfast is not included in the price.\r\nBreakfast from 9.9 EUR per adult. You need to contact the hostel to book your breakfast. \r\nBreakfast is served between 7.00 AM and 10.30 AM on weekdays and between 08.00 AM and 11.30 AM on weekends. \r\n\r\nCANCELLATION POLICIES:\r\nNon-Refundable rate: this rate offers no flexibility. Non-refundable bookings cannot be changed or cancelled are prepaid. Full payment is required at the time of booking. \r\nFully Flexible rate: This rate offers full flexibility on your booking up to 24hrs prior to arrival. The total price of the booking will be charged 24hrs before arrival.\r\n\r\nGENERAL: \r\nNon-smoking hostel.\r\n24-hour reception.\r\nTowels are provided only specific rooms, such as private rooms. For other room types, towels can be rented for a small fee. Guests are also welcome to bring their own towels. \r\nThere is no onsite parking available.\r\nNo pets or animals are allowed, apart from guide dogs. Please contact the hostel form more information. \r\nMaximum stay of 14 days\r\n\r\nTAXES: \r\nCity tax is not included in the room rate and will be added to your balance. Please note that the city tax of Amsterdam is 12.5%. \r\n\r\nACCESSIBILITY: \r\nSome of our private Quad/Family rooms available for wheelchair users. These rooms are located near the elevator and can accommodate up to four people (with one double bed and two single beds in bunks). Please contact the hostel for more information, their reservations team will be happy to provide you more information.\r\n\r\nGROUPS POLCIY: \r\nGroup conditions apply to all groups of 20 people or more.  Special terms and conditions will apply for group bookings. We recommend you contact the hostel for more information. \r\nAge restriction: Guests must be 15+ years old for arrival between March and October (included) and 12+ years old from November through February (request ONLY - we will need to be told at the time of booking).\r\nPayment policy: \r\nNon-refundable rate: Full payment is required within 24 hours of confirming the booking regardless of the rate type selected.\r\nFlexible rate: 20% of the total amount is due immediately after booking confirmation.  This amount is non-refundable. The balance equal to the remaining 80% of the amount is due within 30 days before arrival."
+ ],
+ "policies": [
+  "Child Friendly",
+  "No Curfew",
+  "Non Smoking",
+  "Taxes Not Included"
+ ],
+ "groupInformation": {
+  "additionalTerms": "You will be asked to pay a 20% non-refundable deposit within the week of your booking.\n\nOne group leader will be required to give a credit card upon arrival for a \u201cGroup Deposit\u201d. This will need to be the card holder. We will pre-authorize the card for \u00a3300 in case of breakage or for not respecting coach stopping/parking rules.\n\nFull T&Cs will be emailed to you at the time of booking",
+  "cancellationTerms": "28+ days before arrival: the 20% deposit paid will not be refunded\n-28 days before arrival: no-refund given",
+  "listingInfo": "",
+  "groupTerms": "\u25cf Groups of more than 15 pax booking through this website will be required to pay a 20% deposit at the time of booking which is non-refundable. The remaining balance will have to be paid 4 weeks prior to arrival\n\u25cf We accept groups from age 12+. \n\u25cf One group leader will be required to give a credit card upon arrival for a \u201cGroup Deposit\u201d. This will need to be the cardholder. We will pre-authorize the card for \u00a3300 in case of breakage or for not respecting coach stopping/parking rules.\n\u25cf If your group is arriving by coach, make sure to contact us for information on where to stop and park.\n\u25cf If you do not inform us by email on groups@clinkhostels.com when booking we cannot guarantee for your group to be in the same rooms and depending on availability your booking might be cancelled.",
+  "remainderDue": "4 weeks prior to arrival.",
+  "groupMaxPax": 14,
+  "groupTypesAccepted": {
+   "1": "Holiday with Friends",
+   "2": "Junior / Primary School",
+   "3": "High / Secondary School",
+   "4": "College / University",
+   "5": "Business Trip",
+   "7": "Sports Group",
+   "8": "Cultural Group"
+  },
+  "ageRangesAccepted": {
+   "2": "12-18",
+   "3": "18-21",
+   "4": "21-35",
+   "5": "35-50"
+  }
+ },
+ "images": [
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/9",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/47",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/46",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/41",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/12",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/gvwngxg6zc9wxgtzaywo",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/mznff2iieu5crlk3wzkx",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/x1lhdl3tbtqlqlwbkte4",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/ejm6wlqzcxmsdnirwes1",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/r2gadhexdxv4xn6bkxpt",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/v5hruhb3iohupcxnuz30",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/qhjyvkgismyyeuz9zlnx",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/jsuqi3rlxizxuvip20y1",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/jy0s884a0lxdtccrspce",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/qd5oaiusekzygdeskgfm",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/fury3uv3x1ejd5eficot",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/m4ut9l6zrvcvdowgkiox",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/fsxe4fa72qr1f8rkrzwj",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/fbe3obalusyhrnmfghos",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/vjsl1rl3opxjeqvglvf5",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/p3llla4oejnoikj0y2t9",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/n1vkvbsdsisorgfajs44",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/xcgas55izyuh8w5mfj3j",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/b9bziakv84fkxqtfedz8",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/fa3aly10nh6lkififik4",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/rlii6sgx3vyi8be8ncr9",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/kqkdxmb2mkaunjrnzngg",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/nz0fpku49uznlp6kulci",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/fs4gzyiku7b8gtfxwqgi",
+   "suffix": ".jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/propertyimages/9/93919/urrno6lvwppkmvyfei9g",
+   "suffix": ".jpg"
+  }
+ ],
+ "imagesGallery": [
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/9.jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/47.jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/46.jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/41.jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/12.jpg"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/gvwngxg6zc9wxgtzaywo"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/mznff2iieu5crlk3wzkx"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/x1lhdl3tbtqlqlwbkte4"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/ejm6wlqzcxmsdnirwes1"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/r2gadhexdxv4xn6bkxpt"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/v5hruhb3iohupcxnuz30"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/qhjyvkgismyyeuz9zlnx"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/jsuqi3rlxizxuvip20y1"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/jy0s884a0lxdtccrspce"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/qd5oaiusekzygdeskgfm"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/fury3uv3x1ejd5eficot"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/m4ut9l6zrvcvdowgkiox"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/fsxe4fa72qr1f8rkrzwj"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/fbe3obalusyhrnmfghos"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/vjsl1rl3opxjeqvglvf5"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/p3llla4oejnoikj0y2t9"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/n1vkvbsdsisorgfajs44"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/xcgas55izyuh8w5mfj3j"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/b9bziakv84fkxqtfedz8"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/fa3aly10nh6lkififik4"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/rlii6sgx3vyi8be8ncr9"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/kqkdxmb2mkaunjrnzngg"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/nz0fpku49uznlp6kulci"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/fs4gzyiku7b8gtfxwqgi"
+  },
+  {
+   "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+   "suffix": "/v1/propertyimages/9/93919/urrno6lvwppkmvyfei9g"
+  }
+ ],
+ "heroImages": {
+  "mobile": {
+   "prefix": "ucd.hwstatic.com/hw/location-images/city/",
+   "suffix": "amsterdam_s.jpg"
+  },
+  "tablet": {
+   "prefix": "ucd.hwstatic.com/hw/location-images/city/",
+   "suffix": "amsterdam_m.jpg"
+  },
+  "desktop": {
+   "prefix": "ucd.hwstatic.com/hw/location-images/city/",
+   "suffix": "amsterdam_l.jpg"
+  }
+ },
+ "associations": [],
+ "videos": [],
+ "purchasableExtras": [],
+ "lowestPricePerNight": {
+  "value": "14.40",
+  "currency": "EUR"
+ },
+ "propertyPrices": {
+  "Currency": "EUR",
+  "SharedMinPrice": "14.40",
+  "SharedMaxPrice": "109.55",
+  "SharedAveragePrice": "61.98",
+  "PrivateMinPrice": "16.02",
+  "PrivateMaxPrice": "1150.00",
+  "PrivateAveragePrice": "583.01",
+  "MinPrice": "14.40",
+  "MaxPrice": "1150.00",
+  "AveragePrice": "61.98"
+ },
+ "locationInfo": "",
+ "accommodationInfo": "",
+ "overview": "",
+ "about": "",
+ "propertyExtraInfo": "",
+ "taxInfo": {
+  "included": false,
+  "taxes": [
+   {
+    "type": "sales tax",
+    "amount": 12.5,
+    "fixed": false
+   }
+  ]
+ },
+ "feeInfo": {
+  "included": true,
+  "fees": []
+ },
+ "timesBookedToday": 55,
+ "businessRegNumber": "118238",
+ "categories": []
+}

@@ -1,0 +1,207 @@
+[
+ {
+  "id": 15,
+  "name": "Amsterdam, Netherlands",
+  "englishName": "Amsterdam, Netherlands",
+  "type": "city",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  }
+ },
+ {
+  "id": 378,
+  "name": "Red Light District, Amsterdam, Netherlands",
+  "englishName": "Red Light District, Amsterdam, Netherlands",
+  "type": "popular places",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 345,
+  "name": "Centraal Railway Station, Amsterdam, Netherlands",
+  "englishName": "Centraal Railway Station, Amsterdam, Netherlands",
+  "type": "popular places",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 346,
+  "name": "Dam Square, Amsterdam, Netherlands",
+  "englishName": "Dam Square, Amsterdam, Netherlands",
+  "type": "popular places",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 321392,
+  "name": "City Trip Hostels Zaandam-Amsterdam, Amsterdam, Netherlands",
+  "englishName": "City Trip Hostels Zaandam-Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 337896,
+  "name": "Zoku Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Zoku Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 286588,
+  "name": "Bunk Hostel Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Bunk Hostel Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 310858,
+  "name": "Xplore Hostel Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Xplore Hostel Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 330192,
+  "name": "Cabins Hotel Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Cabins Hotel Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 332167,
+  "name": "Crossroads Hostel Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Crossroads Hostel Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 334017,
+  "name": "Best Western Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Best Western Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 335594,
+  "name": "Shelter City Amsterdam, Amsterdam, Netherlands",
+  "englishName": "Shelter City Amsterdam, Amsterdam, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "country": "Netherlands"
+  }
+ },
+ {
+  "id": 17927,
+  "name": "Amsterdam Hostel, San Francisco, California, USA",
+  "englishName": "Amsterdam Hostel, San Francisco, California, USA",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 442,
+   "name": "San Francisco",
+   "country": "USA"
+  }
+ },
+ {
+  "id": 324307,
+  "name": "Maxhotel Amsterdam Airport Schiphol, Hoofddorp, Netherlands",
+  "englishName": "Maxhotel Amsterdam Airport Schiphol, Hoofddorp, Netherlands",
+  "type": "property",
+  "location": {
+   "latitude": 0,
+   "longitude": 0
+  },
+  "city": {
+   "id": 17050,
+   "name": "Hoofddorp",
+   "country": "Netherlands"
+  }
+ }
+]

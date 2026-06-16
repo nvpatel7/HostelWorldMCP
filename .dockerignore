@@ -1,0 +1,11 @@
+# Keep the build context (and image) lean.
+.git
+.gitignore
+.env
+.env.example
+*.md
+DEPLOY.md
+budget.json
+docs/
+.claude/
+.DS_Store

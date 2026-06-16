@@ -1,18 +1,29 @@
 # Hostelworld MCP Server — Design Document
 
-**Status:** Draft for review. No code yet.
+**Status:** Implemented and running against the live site.
 **Audience:** Implementer (you) and reviewers.
-**Goal of this doc:** Lock the architecture and the contracts before writing Go. Every section names the chosen approach, the alternatives considered, and why each alternative was rejected.
+**Goal of this doc:** Lock the architecture and the contracts. Every section names the chosen approach, the alternatives considered, and why each alternative was rejected.
+
+> **v2 pivot (data source):** The Hostelworld Partner API key never arrived, so the
+> server no longer targets a contracted Partner API. Instead it **scrapes Hostelworld's
+> public PWA JSON backend** (`prod.apigee.hostelworld.com`) on demand — the same endpoints
+> `www.hostelworld.com/pwa` calls. Because that backend is unofficial and can change without
+> notice, all upstream access is wrapped in a **circuit breaker** plus conservative rate
+> limits ([§7](#7-hostelworld-data-integration-scraping), [§11.7](#117-circuit-breaker)).
+> Sections below are updated for this; the tool API ([§5](#5-tool-api-design)), transport
+> ([§3](#3-mcp-transport)), state model ([§6](#6-conversation-state-the-show-me-more-problem)),
+> and booking handoff ([§8](#8-booking-handoff)) are unchanged.
 
 ---
 
 ## 1. Goals & Non-Goals
 
 ### 1.1 Goals
-- Expose the Hostelworld Partner API to LLM clients (OpenAI Responses API, and any other MCP client) through a Model Context Protocol server written in Go.
+- Expose Hostelworld's public inventory to LLM clients (OpenAI Responses API, and any other MCP client) through a Model Context Protocol server written in Go, by **scraping the public PWA JSON backend** (no Partner API key — see the v2 pivot note above).
 - Support a multi-turn conversational flow: search → "show me different ones" → drill into a property → produce a booking link.
-- Run as an **unofficial, public MCP**: any internet user can point their MCP client at our URL. We are not affiliated with Hostelworld; we hold a single partner API key whose quota is ours to manage on behalf of all callers.
-- Never expose the Hostelworld API key to the LLM client or to end users.
+- Run as an **unofficial, public MCP**: any internet user can point their MCP client at our URL. We are not affiliated with Hostelworld; we read the same public backend the website uses.
+- Stay resilient when the unofficial upstream breaks: a circuit breaker degrades to a clean error instead of hammering a changed/broken endpoint.
+- Never expose the scraped api-key to the LLM client or to end users (it is the PWA's public key, but we still keep it out of tool responses and logs).
 - Enforce abuse limits (per-IP and global) to protect *our* upstream quota and our wallet.
 - Stay within a hard daily/monthly upstream-call budget; degrade gracefully (refuse new searches with a clear message) before exceeding it.
 - Deploy as a single binary, runnable locally (stdio) or hosted (HTTP).
@@ -63,8 +74,9 @@
                                                           │ HTTPS
                                                           ▼
                                            ┌──────────────────────────────┐
-                                           │ Hostelworld Partner API      │
-                                           │ (partner-api.hostelworld.com)│
+                                           │ Hostelworld public PWA backend│
+                                           │ (prod.apigee.hostelworld.com) │
+                                           │  guarded by a circuit breaker │
                                            └──────────────────────────────┘
 ```
 
@@ -248,42 +260,73 @@ If we observe duplication in production logs >5% of follow-up calls, we'll add a
 
 ---
 
-## 7. Hostelworld API Integration
+## 7. Hostelworld Data Integration (Scraping)
 
-### 7.1 Endpoints we'll use (from the partner API docs)
+No Partner API key was ever granted, so we read the **same JSON backend the public PWA uses**.
+`www.hostelworld.com/pwa` is a Nuxt single-page app; its data comes from
+`https://prod.apigee.hostelworld.com`. We call those endpoints directly with the public
+`api-key` the PWA ships to every browser. Implemented in `internal/hostelworld/scrape.go`
+(transport) + `apigee.go` (response shapes → our tool-facing types) + `apikey.go` (key
+bootstrap). All shapes were captured from live responses and frozen into
+`internal/hostelworld/fixtures/apigee_*.json` for tests.
 
-| Our tool | Upstream endpoint |
+### 7.1 Endpoints we use (verified live)
+
+| Our tool | Upstream call(s) |
 |---|---|
-| `search_hostels` | `GET /2.2/properties/?location-id=X&date-start=…&date-end=…&number-of-guests=…` (Property Search). Requires us first to resolve city → location ID via `GET /2.2/locations/?query=…` (Property Location Search). |
-| `get_hostel_details` | `GET /2.2/properties/{id}/` for static info + `GET /2.2/properties/{id}/availability` for live rooms/prices. |
+| `search_hostels` | Resolve city: `GET /autocomplete-service/v1/autocomplete/web?text={city}` → `[{id,name,type}]`; take the first `type=="city"`. Then `GET /legacy-hwapi-service/2.2/cities/{id}/properties/?number-of-guests=N&date-start=YYYY-MM-DD&num-nights=N&page=1&application=web&currency=…` → `{properties:[…], pagination:{totalNumberOfItems}}`. |
+| `get_hostel_details` | `GET /legacy-hwapi-service/2.2/properties/{id}/?application=web` (static info) + `GET /legacy-hwapi-service/2.2/properties/{id}/availability/?date-start=…&num-nights=N&number-of-guests=N&application=web&currency=…` → `{rooms:{dorms:[…],privates:[…]}}`. |
 | `get_booking_url` | No upstream call. We construct a URL deterministically — see [§8](#8-booking-handoff). |
 
-### 7.2 Two-phase city resolution
+Notes on the shapes we map: the city id namespace (`id=15` for Amsterdam) is the *autocomplete*
+id and is also what `cities/{id}/properties/` wants — it is **not** the `property-group-id` the
+generic `/properties/` endpoint expects. Prices arrive as `{"value":"26.04","currency":"USD"}`
+strings; ratings as `overallRating.overall` on a **0–100** scale (we divide by 10). Dates are
+expressed to the upstream as `date-start` + `num-nights` (derived from checkin/checkout).
 
-A user types "Lisbon" but the API wants a numeric `location-id`. Two API hops per first-time search.
+### 7.2 The api-key (bootstrap, not a secret we own)
 
-**Decision:** Cache the city-name → location-id mapping aggressively (24h TTL, LRU, ~1000 entries). Cities don't move. This collapses the common case to one upstream call.
+The api-key is the public key the PWA embeds in its Nuxt runtime config as `APIGEE_KEY:"…"`.
+We bootstrap it by fetching a PWA page and extracting it with a regex (`apikey.go`), caching it
+(6h TTL) and **force-refreshing once on a 401** so we automatically track Hostelworld's
+rotations. A compiled-in last-known-good key and a `HOSTELWORLD_APIGEE_KEY` override are the
+fallbacks. We still keep it out of tool responses and logs ([§10](#10-secret-management)).
 
-### 7.3 Client design
-- Single `hostelworldClient` struct holding the `http.Client`, base URL, API key, global rate limiter, and response cache.
-- Each method (`SearchLocations`, `SearchProperties`, `GetProperty`, `GetAvailability`) takes a `context.Context` and returns typed structs.
-- Struct definitions are hand-written from the OpenAPI spec — generated code from openapi-generator tends to produce noisy Go. If the spec changes a lot, revisit.
-- All calls go through one `do()` helper that handles: auth header injection, rate limit acquire, retries on 429/5xx (exponential backoff, max 3 tries), JSON unmarshal, error mapping.
+### 7.3 City resolution + caching
 
-### 7.4 Alternatives Considered
+A user types "Amsterdam" but the search endpoint wants a numeric city id — one autocomplete hop
+per first-time search. We cache the city-name → id mapping aggressively (24h TTL, LRU) so the
+common case collapses to one upstream call. A name with no autocomplete match returns the
+plain-text apology the service emits; we treat that (and any non-array body) as `not_found`,
+not a service error.
+
+### 7.4 Client design
+- Single `ScrapeClient` holding the `http.Client`, apigee base URL, `keyProvider`, global rate
+  limiter, an **in-flight concurrency semaphore**, the **circuit breaker**, and the two LRU
+  caches (city id, property static info).
+- `Search` / `Details` take a `context.Context` and return the same typed structs the tools
+  already used — the `Client` interface is unchanged, so handlers and the demo client are untouched.
+- All calls go through one `getRaw()` helper, wrapped by the circuit breaker, that handles:
+  rate-limit acquire, concurrency cap, api-key injection, retries on 429/5xx (exponential
+  backoff, max 3), a single key-refresh on 401, status→error mapping, and JSON unmarshal.
+  Business outcomes (404 → `not_found`) are returned *without* tripping the breaker; transport
+  and 5xx failures count toward tripping it.
+
+### 7.5 Alternatives Considered
 
 | Option | Rejected because |
 |---|---|
-| **Generated client from OpenAPI** | The Hostelworld OpenAPI spec is unverified by us; generated Go clients tend to need substantial cleanup. Hand-rolled is faster for ~4 endpoints and produces nicer types. |
-| **Per-tool client (one client struct per tool)** | Duplicates the rate limiter and auth code three times. No upside. |
-| **No caching** | Location resolution would be 50% of our upstream traffic for repeat searches. Free win to cache. |
+| **Parse the SSR HTML / `window.__NUXT__` payload** | The page does embed the search results, but as a minified Nuxt *function* blob (deduplicated variables, not JSON). Parsing it reliably needs a JS engine and breaks on every layout tweak. The JSON backend is stable, typed, and paginated. |
+| **Headless browser (Playwright/chromedp)** | Heavy, slow, and a large attack/ops surface for what is a set of plain GET requests. Only justified if the backend moved behind bot-JS challenges (it hasn't for these endpoints). |
+| **Hardcode the api-key** | Rotates; would silently break. We scrape it and refresh on 401 instead, keeping a hardcoded value only as a last-resort fallback. |
+| **No caching** | City resolution would double upstream traffic for repeat searches. Free win to cache (ids don't move). Availability is still never cached ([§12](#12-caching)). |
 
 ---
 
 ## 8. Booking Handoff
 
 ### 8.1 The problem
-The Hostelworld Partner API has no documented checkout endpoint. The user must complete payment on hostelworld.com.
+There is no checkout endpoint we can drive (and we wouldn't want to handle payment anyway). The user must complete payment on hostelworld.com.
 
 ### 8.2 Decision: **Construct deep links by URL pattern**
 
@@ -327,8 +370,12 @@ The user clicks "Book" on that page; Hostelworld then funnels them to `https://w
 
 Two layers, distinct concerns. The unofficial-public-MCP framing changes layer 2 substantially.
 
-### 9.1 MCP server ⇄ Hostelworld API
-Hostelworld uses an API key passed in a header (`Api-Key: <key>` per their docs). The key lives in the env var `HOSTELWORLD_API_KEY`, loaded at startup, never logged, never returned in any response. See [§10](#10-secret-management) for hygiene.
+### 9.1 MCP server ⇄ Hostelworld backend
+The apigee backend requires an `api-key` header. This is the **public key the PWA ships to
+browsers**, not a partner secret, so there is no credential for us to hold — we **bootstrap it
+from the PWA page at runtime** and refresh on rotation ([§7.2](#72-the-api-key-bootstrap-not-a-secret-we-own)).
+An operator may pin it via `HOSTELWORLD_APIGEE_KEY`. We still keep it out of every tool response
+and log line ([§10](#10-secret-management)).
 
 ### 9.2 MCP client ⇄ MCP server
 
@@ -386,9 +433,13 @@ We are not defending against nation-state actors or competent botnets. If that m
 - Code never accepts a secret as a CLI flag (would leak into `ps`, shell history).
 
 ### 10.2 What's a secret here
-- `HOSTELWORLD_API_KEY` — yes, secret.
-- `MCP_BEARER_TOKENS` — yes, secret.
+- `HOSTELWORLD_APIGEE_KEY` — *technically public* (the PWA hands it to every browser), but we
+  treat it as sensitive config: masked in `Config.Redacted()`, kept out of tool responses and
+  logs. We don't own it, so there is nothing to rotate on our side beyond re-scraping.
 - Server bind address, port, log level — config, not secrets. Fine in flags or non-sensitive env.
+
+There is no longer any partner secret or bearer-token secret to manage (the Partner API path
+was removed; the MCP endpoint is open — [§9.2](#92-mcp-client--mcp-server)).
 
 ### 10.3 Defense-in-depth: secret hygiene
 
@@ -485,6 +536,40 @@ This is **abuse protection and quota stewardship**, not DDoS mitigation. A volum
 | Malformed JSON → Go panics in handlers | mcp-go library handles unmarshaling; our handlers receive typed structs. Add a `recover()` middleware as backstop, log + return generic 500. |
 | Slowloris (drip-feeding bytes) | `http.Server.ReadHeaderTimeout = 5s`, `ReadTimeout = 30s`, `WriteTimeout = 30s`, `IdleTimeout = 60s`. |
 | Request body bombs | `http.MaxBytesReader` capped at 1 MiB on the request handler. |
+
+### 11.7 Circuit breaker (NEW — load-bearing for the scraping model)
+
+#### Decision: **One circuit breaker around all apigee operations** (`internal/breaker`, wrapping `sony/gobreaker/v2`)
+
+The rate limiter and budget cap protect Hostelworld and our quota *from us*. The circuit breaker
+protects *us from a broken Hostelworld* — the failure mode the scraping pivot introduces. If the
+backend changes shape, rotates the key in a way we can't recover, blocks us, or goes down, we must
+not keep firing requests into it (each one pays a full timeout, piles up goroutines, and looks like
+an attack from their side).
+
+- **Trip:** after `BREAKER_MAX_FAILURES` consecutive failed operations (default 5) the breaker
+  opens. A failed *operation* = one logical upstream call that exhausted its internal retries
+  (429/5xx with backoff, max 3) or failed to bootstrap the key.
+- **Open:** for `BREAKER_COOLDOWN_SECS` (default 30) every tool call **fails fast** with a
+  `service_busy` error carrying `retry_after_seconds`, and **no request touches the upstream**.
+  This is the "fail fast, honest error" behaviour we chose over serving stale cache or demo data —
+  showing wrong prices on a booking tool is worse than a clear "temporarily unavailable".
+- **Half-open:** after the cooldown a single probe is allowed through; success closes the breaker,
+  failure re-opens it.
+- **Doesn't trip on business outcomes:** a `not_found` (city/property 404) is a normal answer, not
+  an outage, so it is returned without counting against the breaker.
+
+State transitions are logged (`closed→open→half-open`) so an operator can see breakage in the logs;
+a future refinement is a Prometheus gauge for breaker state ([§14.2](#142-metrics)).
+
+#### Alternatives Considered
+
+| Option | Rejected because |
+|---|---|
+| **No breaker, rely on per-request timeouts** | Every request still pays the full timeout while the upstream is down; goroutines and latency pile up, and we keep hammering a broken/blocking endpoint — the opposite of polite. |
+| **Serve stale cache / demo data when scraping fails** | Keeps results flowing but risks showing outdated prices on a tool whose whole point is a real booking. Honesty beats a smooth-but-wrong answer here. |
+| **Per-endpoint breakers** | More granular, but the endpoints share one host and one api-key, so the dominant failure modes (key, host, block) are global. One breaker is simpler and matches "if scraping breaks, we're down." Revisit if one endpoint proves independently flaky. |
+| **Hand-rolled breaker** | ~70 lines, but `sony/gobreaker/v2` is zero-dependency, battle-tested, and gets half-open semantics right. Wrapped behind our thin `breaker` package so it's swappable. |
 
 ---
 
@@ -611,9 +696,9 @@ The public model demands a few operational guardrails:
 | Tier | Scope | Tools |
 |---|---|---|
 | **Unit** | Pure functions: URL building, schema validation, error mapping, cache key derivation. | stdlib `testing`. |
-| **HTTP integration** | Hostelworld client against a fake server. | `httptest.Server` returning recorded fixtures. |
+| **HTTP integration** | Scrape client against a fake apigee server. | `httptest.Server` returning recorded `apigee_*.json` fixtures. |
 | **MCP integration** | Tool handlers via the mcp-go test harness — assert request → response shape. | mcp-go's test utilities. |
-| **Contract** | One test per upstream endpoint that hits real Hostelworld API in a sandbox/test mode (if available) and asserts the response shape. Run weekly in CI, not per-commit. | stdlib + recorded golden files. |
+| **Live smoke / contract** | One env-gated test (`HW_LIVE=1`) that hits the real backend end-to-end (search → details → rooms, plus api-key bootstrap) and asserts shapes. Run manually / weekly in CI, not per-commit. | stdlib; `TestLiveScrape`. |
 | **E2E (manual for v1)** | Connect ChatGPT to a deployed instance, run a full scripted conversation. | Human + checklist. |
 
 ### 16.2 What we're not building for v1
@@ -630,17 +715,18 @@ Numbered to show dependencies. Each milestone is a stopping point where the syst
 | # | Milestone | Verifies |
 |---|---|---|
 | 1 | Project skeleton: `cmd/hostelworld-mcp/main.go`, config loading, `slog` setup, `/healthz` HTTP. | Binary builds, runs, responds to health. |
-| 2 | Hostelworld API client: types + `SearchLocations` + `SearchProperties`, no auth wrapper yet. | Manual `curl` against a recorded fixture passes; integration test green. |
+| 2 | Scrape client (`ScrapeClient`): apigee mapping + api-key bootstrap + `Search` (autocomplete → city properties). | `httptest` fixtures green; `HW_LIVE=1` smoke test returns real properties. |
 | 3 | mcp-go server scaffolding, register `search_hostels` tool that calls #2 client. | Connect via `mcp-inspector`, see the tool, call it, get results. |
-| 4 | Add `get_hostel_details` and `get_booking_url`. | Full happy path through all three tools. |
-| 5 | Bearer-token auth middleware. | Server rejects requests without valid token. |
-| 6 | Per-client rate limiter. | Test that 31st request in a minute is 429'd. |
-| 7 | Global upstream rate limiter + retry-with-backoff. | Confirm via injection of fake 429 from upstream. |
-| 8 | Caching (location + property static). | Cache-hit test; verify availability is *not* cached. |
-| 9 | Error taxonomy + redaction wrapper. | Error tests; secret-redaction tests. |
-| 10 | Metrics + structured logs. | `/metrics` returns Prometheus exposition. |
-| 11 | Containerize, deploy to Fly.io behind Cloudflare. | Connect ChatGPT → run scripted conversation end-to-end. |
-| 12 | Contract tests + weekly CI. | Booking URL pattern check passes. |
+| 4 | Add `get_hostel_details` and `get_booking_url`. | Full happy path through all three tools; booking URL returns 200. |
+| 5 | ~~Bearer-token auth~~ — dropped. The MCP endpoint is open ([§9.2](#92-mcp-client--mcp-server)); protection is rate limits + budget cap. | — |
+| 6 | Per-IP rate limiter. | Test that the bucket-exhausting request is 429'd. |
+| 7 | Global upstream rate limiter + in-flight cap + retry-with-backoff. | Confirm via injection of fake 429/5xx from upstream. |
+| 8 | **Circuit breaker** around the scrape client. | Breaker trips after N upstream 5xx; open returns `service_busy` without calling upstream; half-open recovers. |
+| 9 | Caching (city id + property static). | Cache-hit test; verify availability is *not* cached. |
+| 10 | Error taxonomy + redaction wrapper. | Error tests; key-redaction tests. |
+| 11 | Metrics + structured logs (incl. breaker state transitions). | `/metrics` returns Prometheus exposition. |
+| 12 | Containerize, deploy to Fly.io behind Cloudflare. | Connect ChatGPT → run scripted conversation end-to-end. |
+| 13 | Contract/CI: weekly live check of endpoint shapes + booking URL. | Drift in the scraped shapes or booking pattern is caught. |
 
 Estimate: 1-2 weeks for a focused build, depending on Hostelworld API quirks.
 
@@ -675,18 +761,21 @@ Estimate: 1-2 weeks for a focused build, depending on Hostelworld API quirks.
 
 | Concern | Choice | Top reason |
 |---|---|---|
+| **Data source** | **Scrape the public PWA JSON backend** (apigee) | No Partner API key was granted; the PWA backend is stable, typed, and paginated |
+| **api-key** | **Bootstrap from the PWA page**, refresh on 401 | It's the PWA's public browser key, not a partner secret; auto-tracks rotation |
+| **Upstream resilience** | **One circuit breaker** (`sony/gobreaker`) + low QPS + in-flight cap | Scraped backend can break anytime; fail fast instead of hammering it |
 | Transport | Streamable HTTP | OpenAI Responses API speaks it |
 | MCP library | mark3labs/mcp-go | Active, spec-current, clean API |
 | Tool count | 3 | Matches product flow without action-overloading |
 | State for "show more" | Model-tracked `exclude_ids` | Stateless server, naturally conversation-scoped |
-| Booking | Deep-link to hostelworld.com | No partner checkout API exists |
-| Server auth | **Open access (v1)** + signup tier (v2) | Public unofficial MCP; bearer doesn't fit "general public" |
-| Rate limit | Token bucket per IP + global rate + global daily budget cap | Defends quota for everyone since auth doesn't gate access |
+| Booking | Deep-link to hostelworld.com | No checkout API to drive; payment stays on their site |
+| Server auth | **Open access** | Public unofficial MCP; protection is rate limits + budget cap, not credentials |
+| Rate limit | Token bucket per IP + global rate + in-flight cap + daily budget cap | Defends the upstream + our budget since auth doesn't gate access |
 | Cache | LRU in-process; no availability cache | Speed without staleness on prices |
-| Secrets | Env vars + redacting wrapper type | Catches whole class of leak bugs |
+| Secrets | Env-loaded config + redacting wrapper type | Keeps the api-key out of logs/responses |
 | Deploy | Single Fly.io container behind Cloudflare (mandatory) | Cloudflare is load-bearing for the public model, not optional |
-| Currency | Pass-through param, defaults to USD | API supports it; let the model collect from user |
+| Currency | Pass-through param, defaults to USD | Backend supports it; let the model collect from user |
 
 ---
 
-*End of document. Review this, push back on anything, then we can start at milestone 1.*
+*End of document. The Partner-API draft was pivoted to live scraping after the key request went unanswered; see the v2 pivot note at the top.*

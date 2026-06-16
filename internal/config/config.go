@@ -3,7 +3,6 @@
 package config
 
 import (
-	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -11,37 +10,61 @@ import (
 )
 
 type Config struct {
-	APIKey         string
-	Demo           bool
-	ListenAddr     string
-	DailyBudget    int
-	SoftCapPct     int
-	HardCapPct     int
-	RateBucket     int
-	RateRefill     float64
-	RealIPHeader   string
-	GlobalQPS      float64
-	GlobalBurst    int
-	BudgetFile     string
-	HostelworldURL string
+	Demo         bool
+	ListenAddr   string
+	DailyBudget  int
+	SoftCapPct   int
+	HardCapPct   int
+	RateBucket   int
+	RateRefill   float64
+	RealIPHeader string
+	GlobalQPS    float64
+	GlobalBurst  int
+	BudgetFile   string
+
+	// Scrape-mode settings. We scrape Hostelworld's public PWA backend rather
+	// than a Partner API; see DESIGN.md §7.
+	APIGeeBaseURL string
+	PWAPageURL    string
+	// APIGeeKey, if set, pins the api-key instead of scraping it from the page.
+	APIGeeKey   string
+	UserAgent   string
+	MaxInFlight int
+
+	// Circuit breaker around the (unofficial, breakable) upstream.
+	BreakerMaxFailures  int
+	BreakerCooldownSecs int
 }
+
+const defaultUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+	"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+
+const defaultPWAPage = "https://www.hostelworld.com/pwa/s?q=Amsterdam,%20Netherlands" +
+	"&country=Netherlands&city=Amsterdam&type=city&id=15"
 
 func Load() (*Config, error) {
 	c := &Config{
-		ListenAddr:     getOr("LISTEN_ADDR", "127.0.0.1:8080"),
-		RealIPHeader:   os.Getenv("REAL_IP_HEADER"),
-		BudgetFile:     getOr("BUDGET_FILE", "budget.json"),
-		HostelworldURL: getOr("HOSTELWORLD_BASE_URL", "https://partner-api.hostelworld.com"),
+		ListenAddr:    listenAddr(),
+		RealIPHeader:  os.Getenv("REAL_IP_HEADER"),
+		BudgetFile:    getOr("BUDGET_FILE", "budget.json"),
+		APIGeeBaseURL: getOr("HOSTELWORLD_BASE_URL", "https://prod.apigee.hostelworld.com"),
+		PWAPageURL:    getOr("HOSTELWORLD_PWA_PAGE_URL", defaultPWAPage),
+		APIGeeKey:     os.Getenv("HOSTELWORLD_APIGEE_KEY"),
+		UserAgent:     getOr("HOSTELWORLD_USER_AGENT", defaultUserAgent),
 	}
 
 	c.Demo = parseBool(os.Getenv("HOSTELWORLD_DEMO"), false)
-	c.APIKey = os.Getenv("HOSTELWORLD_API_KEY")
-
-	if !c.Demo && c.APIKey == "" {
-		return nil, errors.New("HOSTELWORLD_API_KEY required (or set HOSTELWORLD_DEMO=true)")
-	}
 
 	var err error
+	if c.MaxInFlight, err = parseInt("MAX_IN_FLIGHT", 4); err != nil {
+		return nil, err
+	}
+	if c.BreakerMaxFailures, err = parseInt("BREAKER_MAX_FAILURES", 5); err != nil {
+		return nil, err
+	}
+	if c.BreakerCooldownSecs, err = parseInt("BREAKER_COOLDOWN_SECS", 30); err != nil {
+		return nil, err
+	}
 	if c.DailyBudget, err = parseInt("DAILY_BUDGET", 10000); err != nil {
 		return nil, err
 	}
@@ -55,21 +78,39 @@ func Load() (*Config, error) {
 		return nil, err
 	}
 	c.RateRefill = parseFloat("RATE_REFILL_PER_SEC", 0.2)
-	c.GlobalQPS = parseFloat("GLOBAL_QPS", 5.0)
-	if c.GlobalBurst, err = parseInt("GLOBAL_BURST", 10); err != nil {
+	// Conservative default: we scrape an unofficial backend, so stay polite.
+	c.GlobalQPS = parseFloat("GLOBAL_QPS", 2.0)
+	if c.GlobalBurst, err = parseInt("GLOBAL_BURST", 5); err != nil {
 		return nil, err
 	}
 
 	return c, nil
 }
 
-// Redacted returns a copy with secrets replaced. Safe to log with %+v.
+// Redacted returns a copy with secrets replaced. Safe to log with %+v. The
+// apigee key is the PWA's public key, not a true secret, but we still mask it
+// to avoid pinning a value in logs.
 func (c *Config) Redacted() Config {
 	out := *c
-	if out.APIKey != "" {
-		out.APIKey = "[REDACTED]"
+	if out.APIGeeKey != "" {
+		out.APIGeeKey = "[REDACTED]"
 	}
 	return out
+}
+
+// listenAddr resolves the HTTP bind address. Precedence:
+//  1. LISTEN_ADDR if set (explicit override, e.g. local dev).
+//  2. 0.0.0.0:$PORT if PORT is set (Railway, Cloud Run, and other platforms
+//     inject PORT and expect the app to bind it on all interfaces).
+//  3. 127.0.0.1:8080 default (loopback-only for safe local runs).
+func listenAddr() string {
+	if v := os.Getenv("LISTEN_ADDR"); v != "" {
+		return v
+	}
+	if p := os.Getenv("PORT"); p != "" {
+		return "0.0.0.0:" + p
+	}
+	return "127.0.0.1:8080"
 }
 
 func getOr(key, def string) string {

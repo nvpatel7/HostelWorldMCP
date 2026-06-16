@@ -1,0 +1,1183 @@
+{
+ "properties": [
+  {
+   "id": 93919,
+   "isPromoted": true,
+   "hbid": 0,
+   "name": "ClinkNOORD",
+   "starRating": 0,
+   "overallRating": {
+    "overall": 84,
+    "numberOfRatings": "15482"
+   },
+   "ratingBreakdown": {
+    "ratingsCount": 295,
+    "security": 89,
+    "location": 90,
+    "staff": 88,
+    "fun": 82,
+    "clean": 79,
+    "facilities": 80,
+    "value": 80,
+    "average": 84
+   },
+   "latitude": 52.3842275,
+   "longitude": 4.9037391,
+   "isFeatured": true,
+   "type": "HOSTEL",
+   "address1": "Badhuiskade 3",
+   "address2": "1031 KV Amsterdam",
+   "freeCancellationAvailable": true,
+   "freeCancellationAvailableUntil": "2026-06-18T23:59:59+02:00",
+   "district": {
+    "id": "345",
+    "name": "Centraal Railway Station"
+   },
+   "districts": [
+    {
+     "id": 345,
+     "name": "Centraal Railway Station"
+    }
+   ],
+   "freeCancellation": {
+    "label": "Free Cancellation rates",
+    "description": "If you cancel your booking before ##FREECANCELLATIONBEFOREDATE## (##FREECANCELLATIONUNTILTZABBR##) your deposit will be refunded to your payment card. If you cancel after ##FREECANCELLATIONBEFOREDATE## (##FREECANCELLATIONUNTILTZABBR##) or in the event of a no-show, your deposit will not be refunded and the total of the first night's accommodation will be charged to your payment card, unless otherwise stated (see 'Things to Note' information). Please note that cancellations must be made directly within your booking in My Account."
+   },
+   "lowestPricePerNight": {
+    "value": "26.04",
+    "currency": "USD"
+   },
+   "lowestPrivatePricePerNight": {
+    "value": "109.81",
+    "currency": "USD"
+   },
+   "lowestDormPricePerNight": {
+    "value": "26.04",
+    "currency": "USD"
+   },
+   "lowestAveragePricePerNight": {
+    "value": "50.26",
+    "currency": "USD",
+    "promotions": {
+     "promotionsIds": [
+      246070
+     ],
+     "totalDiscount": "5.00"
+    },
+    "original": "52.90"
+   },
+   "lowestAverageDormPricePerNight": {
+    "value": "50.26",
+    "currency": "USD",
+    "promotions": {
+     "promotionsIds": [
+      246070
+     ],
+     "totalDiscount": "5.00"
+    },
+    "original": "52.90"
+   },
+   "lowestAveragePrivatePricePerNight": {
+    "value": "155.15",
+    "currency": "USD",
+    "promotions": {
+     "promotionsIds": [
+      246070
+     ],
+     "totalDiscount": "5.00"
+    },
+    "original": "163.32"
+   },
+   "isNew": false,
+   "overview": "ClinkNOORD is ideally located in the culturally vibrant Amsterdam Noord area, just across the IJ River and near the Amsterdam Centraal Station.The short ferry ride is free and runs 24/7.",
+   "isElevate": false,
+   "hostelworldRecommends": true,
+   "distance": {
+    "value": 1.44,
+    "units": "km"
+   },
+   "position": 5,
+   "hwExtra": null,
+   "fabSort": {
+    "rank1": 5,
+    "rank2": 4,
+    "rank3": 5,
+    "rank4": 5,
+    "rank5": 5,
+    "rank6": 5,
+    "rank7": 5,
+    "rank8": 5,
+    "rank9": 5
+   },
+   "promotions": [
+    {
+     "id": 246070,
+     "type": "CUSTOM",
+     "stack": false,
+     "name": "LoS - 5% Extra",
+     "discount": 5
+    }
+   ],
+   "city": {
+    "id": "15",
+    "name": "Amsterdam",
+    "hrpRating": "80"
+   },
+   "country": {
+    "id": "148",
+    "name": "Netherlands"
+   },
+   "stayRuleViolations": [],
+   "veryPopular": false,
+   "images": [
+    {
+     "prefix": "a.hwstatic.com/propertyimages/9/93919/9",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/9/93919/47",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/9/93919/46",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/9/93919/41",
+     "suffix": ".jpg"
+    }
+   ],
+   "imagesGallery": [
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/9/93919/9.jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/9/93919/47.jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/9/93919/46.jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/9/93919/41.jpg"
+    }
+   ],
+   "facilities": [
+    {
+     "name": "General",
+     "id": "FACILITYCATEGORYGENERAL",
+     "facilities": [
+      {
+       "name": "Bicycle Parking",
+       "id": "BICYCLEPARKING"
+      },
+      {
+       "name": "Meeting Rooms",
+       "id": "MEETINGROOM"
+      },
+      {
+       "name": "Adaptors",
+       "id": "ADAPTORS"
+      }
+     ]
+    },
+    {
+     "name": "Services",
+     "id": "FACILITYCATEGORYSERVICES",
+     "facilities": [
+      {
+       "name": "Luggage Storage",
+       "id": "LUGGAGESTORAGE"
+      },
+      {
+       "name": "24 Hour Reception",
+       "id": "24HOURRECEPTION"
+      },
+      {
+       "name": "Tours/Travel Desk",
+       "id": "TOURSTRAVELDESK"
+      },
+      {
+       "name": "ATM",
+       "id": "ATM"
+      },
+      {
+       "name": "Housekeeping",
+       "id": "HOUSEKEEPING"
+      }
+     ]
+    },
+    {
+     "name": "Entertainment",
+     "id": "FACILITYCATEGORYENTERTAINMENT",
+     "facilities": [
+      {
+       "name": "Internet Access",
+       "id": "INTERNETACCESS"
+      },
+      {
+       "name": "Book Exchange",
+       "id": "BOOKEXCHANGE"
+      },
+      {
+       "name": "Board Games",
+       "id": "BOARDGAMES"
+      },
+      {
+       "name": "Cable TV",
+       "id": "CABLETV"
+      },
+      {
+       "name": "Pool Table",
+       "id": "POOLTABLE"
+      },
+      {
+       "name": "Foosball",
+       "id": "FUSBALL"
+      },
+      {
+       "name": "Wi-Fi",
+       "id": "WIFI"
+      },
+      {
+       "name": "Table Tennis",
+       "id": "TABLETENNIS"
+      },
+      {
+       "name": "Smart TV",
+       "id": "SMARTTV"
+      }
+     ]
+    },
+    {
+     "name": "Food & Drinks",
+     "id": "FACILITYCATEGORYFOODANDDRINKS",
+     "facilities": [
+      {
+       "name": "Restaurant",
+       "id": "RESTAURANT"
+      },
+      {
+       "name": "Bar",
+       "id": "BAR"
+      },
+      {
+       "name": "Vending Machines",
+       "id": "VENDINGMACHINES"
+      },
+      {
+       "name": "Cafe",
+       "id": "CAFE"
+      }
+     ]
+    },
+    {
+     "name": "Laundry",
+     "id": "FACILITYCATEGORYLAUNDRY",
+     "facilities": [
+      {
+       "name": "Laundry Facilities",
+       "id": "LAUNDRYFACILITIES"
+      },
+      {
+       "name": "Dryer",
+       "id": "DRYER"
+      },
+      {
+       "name": "Washing Machine",
+       "id": "WASHINGMACHINE"
+      },
+      {
+       "name": "Free Iron / Ironing Board",
+       "id": "FREEIRONIRONINGBOARD"
+      },
+      {
+       "name": "Recycling Bins",
+       "id": "RECYCLINGBINS"
+      }
+     ]
+    },
+    {
+     "name": "Available for a Fee",
+     "id": "FACILITYCATEGORYAVAILABLEFORAFEE",
+     "facilities": [
+      {
+       "name": "Bicycle Hire",
+       "id": "BICYCLEHIRE"
+      },
+      {
+       "name": "Towels for hire",
+       "id": "TOWELSFORHIRE"
+      },
+      {
+       "name": "Breakfast Not Included",
+       "id": "BREAKFASTNOTINCLUDED"
+      },
+      {
+       "name": "Hair Dryers For Hire",
+       "id": "HAIRDRYERSFORHIRE"
+      },
+      {
+       "name": "Express check-in / out",
+       "id": "EXPRESSCHECKINOUT"
+      },
+      {
+       "name": "Late check-out",
+       "id": "LATECHECKOUT"
+      },
+      {
+       "name": "Paid Luggage Storage",
+       "id": "PAIDLUGGAGESTORAGE"
+      },
+      {
+       "name": "Paid Security lockers",
+       "id": "PAIDSECURITYLOCKERS"
+      }
+     ]
+    },
+    {
+     "name": "Accessibility",
+     "id": "FACILITYCATEGORYACCESSIBILITY",
+     "facilities": [
+      {
+       "name": "Wheelchair Friendly",
+       "id": "WHEELCHAIRACCESSIBLE"
+      },
+      {
+       "name": "Elevator",
+       "id": "ELEVATOR"
+      },
+      {
+       "name": "Ramps",
+       "id": "RAMPS"
+      },
+      {
+       "name": "Wheelchair-Accessible Bathrooms",
+       "id": "WHEELCHAIRACCESSIBLEBATHROOMS"
+      }
+     ]
+    },
+    {
+     "name": "Bedroom",
+     "id": "FACILITYCATEGORYBEDROOM",
+     "facilities": [
+      {
+       "name": "Linen Included",
+       "id": "LINENINCLUDED"
+      },
+      {
+       "name": "Cots Available",
+       "id": "COTSAVAILABLE"
+      },
+      {
+       "name": "Reading Light",
+       "id": "READINGLIGHT"
+      },
+      {
+       "name": "Hair Dryers",
+       "id": "HAIRDRYERS"
+      },
+      {
+       "name": "Towels Not Included",
+       "id": "TOWELSNOTINCLUDED"
+      },
+      {
+       "name": "Charging Plugs",
+       "id": "CHARGINGPLUGS"
+      }
+     ]
+    },
+    {
+     "name": "Safety & Security",
+     "id": "FACILITYCATEGORYSAFETYANDSECURITY",
+     "facilities": [
+      {
+       "name": "Security Lockers",
+       "id": "LOCKERS"
+      },
+      {
+       "name": "Key Card Access",
+       "id": "KEYCARDACCESS"
+      },
+      {
+       "name": "24 Hour Security",
+       "id": "24HOURSECURITY"
+      },
+      {
+       "name": "Carbon Monoxide Detector",
+       "id": "CARBONMONOXIDEDETECTOR"
+      },
+      {
+       "name": "CCTV in Common Areas",
+       "id": "CCTVINCOMMONAREAS"
+      },
+      {
+       "name": "Fire Extinguishers",
+       "id": "FIREEXTINGUISHERS"
+      },
+      {
+       "name": "First Aid Kits",
+       "id": "FIRSTAIDKITS"
+      },
+      {
+       "name": "Smoke Alarms",
+       "id": "SMOKEALARMS"
+      },
+      {
+       "name": "Smoke Detector",
+       "id": "SMOKEDETECTOR"
+      }
+     ]
+    },
+    {
+     "name": "Social Areas",
+     "id": "FACILITYCATEGORYSOCIALAREAS",
+     "facilities": [
+      {
+       "name": "Common Room",
+       "id": "COMMONROOM"
+      },
+      {
+       "name": "Games Room",
+       "id": "GAMESROOM"
+      },
+      {
+       "name": "Lounge Room",
+       "id": "LOUNGEROOM"
+      }
+     ]
+    },
+    {
+     "name": "Free",
+     "id": "FACILITYCATEGORYFREE",
+     "facilities": [
+      {
+       "name": "Free City Maps",
+       "id": "FREECITYMAPS"
+      },
+      {
+       "name": "Free WiFi",
+       "id": "FREEWIFI"
+      }
+     ]
+    },
+    {
+     "name": "Wellness",
+     "id": "FACILITYCATEGORYWELLNESS",
+     "facilities": [
+      {
+       "name": "Hot Showers",
+       "id": "HOTSHOWERS"
+      }
+     ]
+    },
+    {
+     "name": "Hostelworld Policies",
+     "id": "FACILITYCATEGORYHOSTELWORLDPOLICIES",
+     "facilities": [
+      {
+       "name": "Flexible NRR",
+       "id": "FLEXIBLENRR"
+      }
+     ]
+    },
+    {
+     "name": "Kitchen",
+     "id": "FACILITYCATEGORYKITCHEN",
+     "facilities": [
+      {
+       "name": "Kettle",
+       "id": "KETTLE"
+      }
+     ]
+    }
+   ],
+   "categories": []
+  },
+  {
+   "id": 13607,
+   "isPromoted": true,
+   "hbid": 0,
+   "name": "St Christopher's Inn Amsterdam - The Winston",
+   "starRating": 0,
+   "overallRating": {
+    "overall": 86,
+    "numberOfRatings": "16278"
+   },
+   "ratingBreakdown": {
+    "ratingsCount": 236,
+    "security": 90,
+    "location": 94,
+    "staff": 89,
+    "fun": 86,
+    "clean": 83,
+    "facilities": 80,
+    "value": 83,
+    "average": 86
+   },
+   "latitude": 52.3738889,
+   "longitude": 4.8963889,
+   "isFeatured": false,
+   "type": "HOSTEL",
+   "address1": "Warmoesstraat 129",
+   "address2": "",
+   "freeCancellationAvailable": true,
+   "freeCancellationAvailableUntil": "2026-06-18T23:59:59+02:00",
+   "district": {
+    "id": "345",
+    "name": "Centraal Railway Station"
+   },
+   "districts": [
+    {
+     "id": 345,
+     "name": "Centraal Railway Station"
+    },
+    {
+     "id": 346,
+     "name": "Dam Square"
+    },
+    {
+     "id": 378,
+     "name": "Red Light District"
+    }
+   ],
+   "freeCancellation": {
+    "label": "Free Cancellation rates",
+    "description": "If you cancel your booking before ##FREECANCELLATIONBEFOREDATE## (##FREECANCELLATIONUNTILTZABBR##) your deposit will be refunded to your payment card. If you cancel after ##FREECANCELLATIONBEFOREDATE## (##FREECANCELLATIONUNTILTZABBR##) or in the event of a no-show, your deposit will not be refunded and the total of the first night's accommodation will be charged to your payment card, unless otherwise stated (see 'Things to Note' information). Please note that cancellations must be made directly within your booking in My Account."
+   },
+   "lowestPricePerNight": {
+    "value": "30.97",
+    "currency": "USD"
+   },
+   "lowestPrivatePricePerNight": {
+    "value": "124.37",
+    "currency": "USD"
+   },
+   "lowestDormPricePerNight": {
+    "value": "30.97",
+    "currency": "USD"
+   },
+   "lowestAveragePricePerNight": {
+    "value": "58.62",
+    "currency": "USD",
+    "promotions": {
+     "promotionsIds": [
+      37584
+     ],
+     "totalDiscount": "10.00"
+    },
+    "original": "65.13"
+   },
+   "lowestAverageDormPricePerNight": {
+    "value": "58.62",
+    "currency": "USD",
+    "promotions": {
+     "promotionsIds": [
+      37584
+     ],
+     "totalDiscount": "10.00"
+    },
+    "original": "65.13"
+   },
+   "lowestAveragePrivatePricePerNight": {
+    "value": "203.07",
+    "currency": "USD",
+    "promotions": {
+     "promotionsIds": [
+      37584
+     ],
+     "totalDiscount": "10.00"
+    },
+    "original": "225.63"
+   },
+   "isNew": false,
+   "overview": "St. Christopher's at The Winston is right in the middle of all the action Amsterdam has to offer! The Red Light District is just outside our back garden, We're a 5-10 minute walk from Central Station, and we're 1 minute from Dam Square. The hostel serves up a rocking bar with a beer garden. \r\n\r\nThere is a continental breakfast available every morning for just \u20ac7 a day which can be purchased at reception on arrival, and free WiFi runs throughout the building. All guests receive 25% discount on food at our lively Belushi's bar and restaurant, plus great drink deals!\r\n\r\nAll guests must be 18 years or older on the day of check-in.\r\n \r\nWe have a fun, diverse, international crew; many of whom speak multiple languages and are travellers just like you. They are happy to help you plan trips and book tickets for onward travel, and there is a free walking tour that picks up from the hostel and a pub crawl that passes through our bar each night.\r\n \r\nParty or relax in our on-site Belushi's bar and restaurant where you'll find cool tunes, sports on TV, a pool-table, great food and drink promotions all year round. On our bar menu you'll find hearty and healthy food, including the best burgers in town, tasty salads, towering Nachos, killer spicy wings, and luscious wraps. And to make things even better; all hotel/hostel guests get a 25% discount on the entire food menu! Guests also get exclusive drinks deals on a great selection of spirits, beers, and shots - all day every day!\r\n\r\nThere is free Wi-Fi running smoothly throughout the entire building. \r\n \r\nCheck-in is at 15:00 and check-out at 11:00. We have a 24-hour front desk and secure coin-operated luggage storage that can be used before check-in and after check-out (max. \u20ac 6 / 24 hours)\r\n \r\nGroup bookings of 10 people or more need to be requested by email. We reserve the right to cancel group bookings which are not made in this way.\r\n\r\nThis is a strictly 18+ hostel. \r\n \r\nNon-Refundable Rate\r\nThis reservation is non-refundable. The remaining balance of your stay may be charged at any time after the booking is confirmed.\r\n\r\nFree Cancellation Rate\r\nYou may cancel your reservation free of charge up to 24 hours before the scheduled arrival date. In the event of a no-show or cancellation made within 24 hours of arrival, the full booking amount will be charged. The remaining balance of your stay may be charged within 24 hours of arrival.",
+   "isElevate": false,
+   "hostelworldRecommends": true,
+   "distance": {
+    "value": 0.22,
+    "units": "km"
+   },
+   "position": 2,
+   "hwExtra": null,
+   "fabSort": {
+    "rank1": 1,
+    "rank2": 1,
+    "rank3": 2,
+    "rank4": 1,
+    "rank5": 2,
+    "rank6": 1,
+    "rank7": 2,
+    "rank8": 1,
+    "rank9": 2
+   },
+   "promotions": [
+    {
+     "id": 37584,
+     "type": "CUSTOM",
+     "stack": false,
+     "name": "10% everyone all platforms",
+     "discount": 10
+    }
+   ],
+   "city": {
+    "id": "15",
+    "name": "Amsterdam",
+    "hrpRating": "80"
+   },
+   "country": {
+    "id": "148",
+    "name": "Netherlands"
+   },
+   "stayRuleViolations": [],
+   "veryPopular": false,
+   "images": [
+    {
+     "prefix": "a.hwstatic.com/propertyimages/1/13607/yu7hwxy4o4pvz4mnfjpt",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/1/13607/s5r7mufzycjitupj7zwb",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/1/13607/ukwhykafzpzoih2khzrd",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/1/13607/uqexarvl91nn6zwyvxh9",
+     "suffix": ".jpg"
+    }
+   ],
+   "imagesGallery": [
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/1/13607/yu7hwxy4o4pvz4mnfjpt"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/1/13607/s5r7mufzycjitupj7zwb"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/1/13607/ukwhykafzpzoih2khzrd"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/1/13607/uqexarvl91nn6zwyvxh9"
+    }
+   ],
+   "facilities": [
+    {
+     "name": "Services",
+     "id": "FACILITYCATEGORYSERVICES",
+     "facilities": [
+      {
+       "name": "Luggage Storage",
+       "id": "LUGGAGESTORAGE"
+      },
+      {
+       "name": "24 Hour Reception",
+       "id": "24HOURRECEPTION"
+      },
+      {
+       "name": "Housekeeping",
+       "id": "HOUSEKEEPING"
+      }
+     ]
+    },
+    {
+     "name": "Entertainment",
+     "id": "FACILITYCATEGORYENTERTAINMENT",
+     "facilities": [
+      {
+       "name": "Internet Access",
+       "id": "INTERNETACCESS"
+      },
+      {
+       "name": "Nightclub",
+       "id": "NIGHTCLUB"
+      },
+      {
+       "name": "Pool Table",
+       "id": "POOLTABLE"
+      },
+      {
+       "name": "Wi-Fi",
+       "id": "WIFI"
+      }
+     ]
+    },
+    {
+     "name": "Food & Drinks",
+     "id": "FACILITYCATEGORYFOODANDDRINKS",
+     "facilities": [
+      {
+       "name": "Restaurant",
+       "id": "RESTAURANT"
+      },
+      {
+       "name": "Bar",
+       "id": "BAR"
+      },
+      {
+       "name": "Cafe",
+       "id": "CAFE"
+      }
+     ]
+    },
+    {
+     "name": "Bedroom",
+     "id": "FACILITYCATEGORYBEDROOM",
+     "facilities": [
+      {
+       "name": "Linen Included",
+       "id": "LINENINCLUDED"
+      },
+      {
+       "name": "Hair Dryers",
+       "id": "HAIRDRYERS"
+      }
+     ]
+    },
+    {
+     "name": "Safety & Security",
+     "id": "FACILITYCATEGORYSAFETYANDSECURITY",
+     "facilities": [
+      {
+       "name": "Security Lockers",
+       "id": "LOCKERS"
+      },
+      {
+       "name": "Key Card Access",
+       "id": "KEYCARDACCESS"
+      },
+      {
+       "name": "Smoke Alarms",
+       "id": "SMOKEALARMS"
+      }
+     ]
+    },
+    {
+     "name": "Free",
+     "id": "FACILITYCATEGORYFREE",
+     "facilities": [
+      {
+       "name": "Free City Maps",
+       "id": "FREECITYMAPS"
+      },
+      {
+       "name": "Free WiFi",
+       "id": "FREEWIFI"
+      },
+      {
+       "name": "Free Internet Access",
+       "id": "FREEINTERNETACCESS"
+      }
+     ]
+    },
+    {
+     "name": "Wellness",
+     "id": "FACILITYCATEGORYWELLNESS",
+     "facilities": [
+      {
+       "name": "Hot Showers",
+       "id": "HOTSHOWERS"
+      }
+     ]
+    },
+    {
+     "name": "Outdoors",
+     "id": "FACILITYCATEGORYOUTDOORS",
+     "facilities": [
+      {
+       "name": "Outdoor Terrace",
+       "id": "OUTDOORTERRACE"
+      }
+     ]
+    },
+    {
+     "name": "Available for a Fee",
+     "id": "FACILITYCATEGORYAVAILABLEFORAFEE",
+     "facilities": [
+      {
+       "name": "Hair Dryers For Hire",
+       "id": "HAIRDRYERSFORHIRE"
+      }
+     ]
+    }
+   ],
+   "categories": []
+  },
+  {
+   "id": 265063,
+   "isPromoted": false,
+   "hbid": 0,
+   "name": "Generator Amsterdam",
+   "starRating": 0,
+   "overallRating": {
+    "overall": 84,
+    "numberOfRatings": "4586"
+   },
+   "ratingBreakdown": {
+    "ratingsCount": 133,
+    "security": 93,
+    "location": 79,
+    "staff": 88,
+    "fun": 82,
+    "clean": 83,
+    "facilities": 81,
+    "value": 82,
+    "average": 84
+   },
+   "latitude": 52.3608778,
+   "longitude": 4.9189972,
+   "isFeatured": false,
+   "type": "HOSTEL",
+   "address1": "Mauritskade 57",
+   "address2": "",
+   "freeCancellationAvailable": true,
+   "freeCancellationAvailableUntil": "2026-06-18T23:59:59+02:00",
+   "district": null,
+   "districts": [],
+   "freeCancellation": {
+    "label": "Free Cancellation rates",
+    "description": "If you cancel your booking before ##FREECANCELLATIONBEFOREDATE## (##FREECANCELLATIONUNTILTZABBR##) your deposit will be refunded to your payment card. If you cancel after ##FREECANCELLATIONBEFOREDATE## (##FREECANCELLATIONUNTILTZABBR##) or in the event of a no-show, your deposit will not be refunded and the total of the first night's accommodation will be charged to your payment card, unless otherwise stated (see 'Things to Note' information). Please note that cancellations must be made directly within your booking in My Account."
+   },
+   "lowestPricePerNight": {
+    "value": "31.47",
+    "currency": "USD"
+   },
+   "lowestPrivatePricePerNight": {
+    "value": "132.57",
+    "currency": "USD"
+   },
+   "lowestDormPricePerNight": {
+    "value": "31.47",
+    "currency": "USD"
+   },
+   "lowestAveragePricePerNight": {
+    "value": "54.14",
+    "currency": "USD"
+   },
+   "lowestAverageDormPricePerNight": {
+    "value": "54.14",
+    "currency": "USD"
+   },
+   "lowestAveragePrivatePricePerNight": {
+    "value": "236.69",
+    "currency": "USD"
+   },
+   "isNew": false,
+   "overview": "Generator Amsterdam is a design hotel-hostel located in the heart of the city, overlooking Oosterpark. Guests can choose from shared dorms to private rooms, offering something for everyone. Housed in the former zoological university, Generator Amsterdam has transformed the original space creating an auditorium bar, library and basement nightclub. Complete with 24-hour reception, free wifi, cafe, and bikes available for hire, Generator is a fun and affordable choice in Amsterdam.\r\n\r\nThe Generator Amsterdam Reception is open 24 hours a day with a duty manager always around and happy to help. It has flexible and spacious social areas, filled with creative design touches like glass-fronted elevators, a raised cafe and an outdoor terrace. We have turned the former lecture hall into an impressive chill-out lounge and bar, while the old library is now a relaxation and private events room, and the basement and cafe are now dining destinations.\r\n\r\nStay connected with free Wi-Fi and share those holiday snaps. In need of some clean clothes? The laundry is open 24 hours for washing, drying and ironing. A secure luggage room gives you more freedom to explore Amsterdam bag-free! The best way to explore Amsterdam is definitely by bike. Luckily for you, our hostel provides Vanmoof bikes for rental. Ride your bicycle along cafe lined waterways, visit the most creative shops around De Pijp or just kick back by the canal and try a few cold Dutch beers. It's pretty hard to get stressed in Amsterdam, but having a good time is easy.\r\n\r\nCome to our travel shop for city tour tickets and more. You forgot your toothbrush or want a travel journal to keep track of your experiences? Visit our Gen-Store for exclusive Generator products. Let us help you make the most of your stay! Our hostel staff are incredibly friendly, multilingual and know the city inside out. They are on hand to help you with whatever info you need, just ask. \r\n\r\nGenerator Amsterdam is located in the up-and-coming eastern side of the city overlooking Oosterpark. This former zoological university building offers accommodation from private to shared, and now even pods - with incredible views of the surrounding area. We have a wide selection of contemporary Privates, Twins and Shared Rooms with crisp white linen and lockable storage at great rates available. If you are in a Twin room, fluffy white towels are a complimentary extra. There is also one luxury apartment for six people with views of the park and a self-catered kitchen. Breakfast is available daily in our cafe space.",
+   "isElevate": false,
+   "hostelworldRecommends": true,
+   "distance": {
+    "value": 2.18,
+    "units": "km"
+   },
+   "position": 5,
+   "hwExtra": null,
+   "fabSort": {
+    "rank1": 18,
+    "rank2": 18,
+    "rank3": 18,
+    "rank4": 18,
+    "rank5": 18,
+    "rank6": 18,
+    "rank7": 18,
+    "rank8": 18,
+    "rank9": 18
+   },
+   "promotions": [],
+   "city": {
+    "id": "15",
+    "name": "Amsterdam",
+    "hrpRating": "80"
+   },
+   "country": {
+    "id": "148",
+    "name": "Netherlands"
+   },
+   "stayRuleViolations": [],
+   "veryPopular": false,
+   "images": [
+    {
+     "prefix": "a.hwstatic.com/propertyimages/2/265063/whqxn64cydaeovgbybjy",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/2/265063/u9sfhllffr49lhpts92l",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/2/265063/wcpbuynakqefnxxkmufa",
+     "suffix": ".jpg"
+    },
+    {
+     "prefix": "a.hwstatic.com/propertyimages/2/265063/phqdirgkalth45f0vxv4",
+     "suffix": ".jpg"
+    }
+   ],
+   "imagesGallery": [
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/2/265063/whqxn64cydaeovgbybjy"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/2/265063/u9sfhllffr49lhpts92l"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/2/265063/wcpbuynakqefnxxkmufa"
+    },
+    {
+     "prefix": "a.hwstatic.com/image/upload/f_auto,q_auto",
+     "suffix": "/v1/propertyimages/2/265063/phqdirgkalth45f0vxv4"
+    }
+   ],
+   "facilities": [
+    {
+     "name": "General",
+     "id": "FACILITYCATEGORYGENERAL",
+     "facilities": [
+      {
+       "name": "Meeting Rooms",
+       "id": "MEETINGROOM"
+      }
+     ]
+    },
+    {
+     "name": "Services",
+     "id": "FACILITYCATEGORYSERVICES",
+     "facilities": [
+      {
+       "name": "Luggage Storage",
+       "id": "LUGGAGESTORAGE"
+      },
+      {
+       "name": "24 Hour Reception",
+       "id": "24HOURRECEPTION"
+      },
+      {
+       "name": "Tours/Travel Desk",
+       "id": "TOURSTRAVELDESK"
+      },
+      {
+       "name": "ATM",
+       "id": "ATM"
+      },
+      {
+       "name": "Housekeeping",
+       "id": "HOUSEKEEPING"
+      }
+     ]
+    },
+    {
+     "name": "Entertainment",
+     "id": "FACILITYCATEGORYENTERTAINMENT",
+     "facilities": [
+      {
+       "name": "Internet Access",
+       "id": "INTERNETACCESS"
+      },
+      {
+       "name": "Nightclub",
+       "id": "NIGHTCLUB"
+      },
+      {
+       "name": "Board Games",
+       "id": "BOARDGAMES"
+      },
+      {
+       "name": "Wi-Fi",
+       "id": "WIFI"
+      }
+     ]
+    },
+    {
+     "name": "Food & Drinks",
+     "id": "FACILITYCATEGORYFOODANDDRINKS",
+     "facilities": [
+      {
+       "name": "Restaurant",
+       "id": "RESTAURANT"
+      },
+      {
+       "name": "Bar",
+       "id": "BAR"
+      },
+      {
+       "name": "Vending Machines",
+       "id": "VENDINGMACHINES"
+      },
+      {
+       "name": "Cafe",
+       "id": "CAFE"
+      }
+     ]
+    },
+    {
+     "name": "Laundry",
+     "id": "FACILITYCATEGORYLAUNDRY",
+     "facilities": [
+      {
+       "name": "Laundry Facilities",
+       "id": "LAUNDRYFACILITIES"
+      }
+     ]
+    },
+    {
+     "name": "Available for a Fee",
+     "id": "FACILITYCATEGORYAVAILABLEFORAFEE",
+     "facilities": [
+      {
+       "name": "Bicycle Hire",
+       "id": "BICYCLEHIRE"
+      },
+      {
+       "name": "Towels for hire",
+       "id": "TOWELSFORHIRE"
+      }
+     ]
+    },
+    {
+     "name": "Bedroom",
+     "id": "FACILITYCATEGORYBEDROOM",
+     "facilities": [
+      {
+       "name": "Linen Included",
+       "id": "LINENINCLUDED"
+      },
+      {
+       "name": "Air Conditioning",
+       "id": "AIRCONDITIONING"
+      },
+      {
+       "name": "Reading Light",
+       "id": "READINGLIGHT"
+      },
+      {
+       "name": "Towels Not Included",
+       "id": "TOWELSNOTINCLUDED"
+      }
+     ]
+    },
+    {
+     "name": "Safety & Security",
+     "id": "FACILITYCATEGORYSAFETYANDSECURITY",
+     "facilities": [
+      {
+       "name": "Security Lockers",
+       "id": "LOCKERS"
+      },
+      {
+       "name": "Key Card Access",
+       "id": "KEYCARDACCESS"
+      },
+      {
+       "name": "24 Hour Security",
+       "id": "24HOURSECURITY"
+      }
+     ]
+    },
+    {
+     "name": "Social Areas",
+     "id": "FACILITYCATEGORYSOCIALAREAS",
+     "facilities": [
+      {
+       "name": "Common Room",
+       "id": "COMMONROOM"
+      }
+     ]
+    },
+    {
+     "name": "Accessibility",
+     "id": "FACILITYCATEGORYACCESSIBILITY",
+     "facilities": [
+      {
+       "name": "Elevator",
+       "id": "ELEVATOR"
+      }
+     ]
+    },
+    {
+     "name": "Free",
+     "id": "FACILITYCATEGORYFREE",
+     "facilities": [
+      {
+       "name": "Free City Maps",
+       "id": "FREECITYMAPS"
+      },
+      {
+       "name": "Free WiFi",
+       "id": "FREEWIFI"
+      },
+      {
+       "name": "Free Internet Access",
+       "id": "FREEINTERNETACCESS"
+      }
+     ]
+    },
+    {
+     "name": "Wellness",
+     "id": "FACILITYCATEGORYWELLNESS",
+     "facilities": [
+      {
+       "name": "Hot Showers",
+       "id": "HOTSHOWERS"
+      }
+     ]
+    }
+   ],
+   "categories": []
+  }
+ ],
+ "location": {
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "idCountry": 148,
+   "country": "Netherlands"
+  },
+  "region": {
+   "id": "403",
+   "name": "Diemen"
+  }
+ },
+ "locationEn": {
+  "city": {
+   "id": 15,
+   "name": "Amsterdam",
+   "idCountry": 148,
+   "country": "Netherlands"
+  },
+  "region": {
+   "id": "403",
+   "name": "Diemen"
+  }
+ },
+ "filterData": {
+  "highestPricePerNight": {
+   "value": "1077.79",
+   "currency": "USD"
+  },
+  "lowestPricePerNight": {
+   "value": "16.83",
+   "currency": "USD"
+  }
+ },
+ "sortOrder": {
+  "sortFactor": 0.8682289009901
+ },
+ "pagination": {
+  "next": "",
+  "prev": "",
+  "numberOfPages": 1,
+  "totalNumberOfItems": 68
+ }
+}
